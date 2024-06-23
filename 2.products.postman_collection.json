@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "0b9bad68-7476-456f-8c5c-82e39d37a16a",
+		"name": "2.products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "36305268",
+		"_collection_link": "https://g18999.postman.co/workspace/g18-Workspace~1da11ef9-6f7e-4d26-809b-72e33aea6b6d/collection/36198682-0b9bad68-7476-456f-8c5c-82e39d37a16a?action=share&source=collection_link&creator=36305268"
+	},
+	"item": [
+		{
+			"name": "Get all products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dummyjson.com/products?limit=10&skip=10&select=title,description,price",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "skip",
+							"value": "10"
+						},
+						{
+							"key": "select",
+							"value": "title,description,price"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a single product",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dummyjson.com/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Search products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products/search?q=phone",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "phone"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limit and skip products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products?limit=10&skip=10&select=title,price",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "skip",
+							"value": "10"
+						},
+						{
+							"key": "select",
+							"value": "title,price"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sort products",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dummyjson.com/products?sortBy=title&order=asc",
+					"protocol": "https",
+					"host": [
+						"dummyjson",
+						"com"
+					],
+					"path": [
+						"products"
+					],
+					"query": [
+						{
+							"key": "sortBy",
+							"value": "title"
+						},
+						{
+							"key": "order",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dummyjson.com/products/categories"
+			},
+			"response": []
+		},
+		{
+			"name": "Get products category list",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dummyjson.com/products/category-list"
+			},
+			"response": []
+		},
+		{
+			"name": "Get products by a category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dummyjson.com/products/category/smartphones"
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"title\": \"BMW Pencil\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dummyjson.com/products/add"
+			},
+			"response": []
+		},
+		{
+			"name": "Update a product",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"iPhone Galaxy +1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://dummyjson.com/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "https://dummyjson.com/products/1"
+			},
+			"response": []
+		}
+	]
+}
